@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <script>
+
+        //     // CLASS
+            class mobile{
+                constructor(brand, battery, camera, processor, cost){
+                    this.brand = brand
+                    this.battery = battery
+                    this.camera = camera           //constructor with properties
+                    this.processor = processor
+                    this.cost = cost
+                }
+
+            about(){ //method initialization
+
+               console.log(`the brand is ${this.brand} , the battery is ${this.battery}, the camera quality is ${this.camera}, the processor is ${this.processor}, the cost is ${this.cost}`);
+            }
+        }
+        // 
+        //           CEATING OBJECTS outside class
+                let details = new mobile("IQ00 Z12PRPO" , "6000Mah" , "120MP", "dimensity 9000", 30000)
+                console.log(details.about()); //CALLING METHOD
+                console.log(details);
+
+
+
+        //INHERITENCE
+
+          class Animal{
+            constructor(weight,height,voice){
+                this.weight = weight
+                this.height = height
+                this.voice = voice
+
+            }
+           eating(){
+            console.log("eating...");
+
+           }
+        }
+
+         // NEW //SUBCLASS
+
+          class Dog extends Animal{
+
+            constructor(weight,height,voice,breed,food){
+                //must call super method for parent props
+                super(weight,height,food)
+                this.breed = breed
+                this.food = food
+            }
+
+
+          }
+
+          var dog1 = new Dog("15kgs", "2feet", "bow bow", "indie", "nonveg");
+          console.log(dog1); 
+
+          dog1.eating(); // Outputs: Eating...
+
+
+        class Cricketer {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+
+            cricket() {
+                console.log("indian player");
+
+            }
+        }
+
+        class ipl extends Cricketer {
+            constructor(name, age, team, runs) {
+                super(name, age)
+                this.team = team
+                this.runs = runs
+
+            }
+        }
+
+        let c1 = new ipl("VIRAT KOHLI", 36, "RCB", "8000RUNS")
+        console.log(c1);
+        c1.cricket(); //c1 with method
+
+
+
+        
+
+    </script>
+
+</body>
+
+</html>
+
